@@ -73,27 +73,14 @@
       
     </div>
 
-    <?php 
-     $group_terms_number = get_terms('groupicons', array('hide_empty' => false));
-      foreach($group_terms_number as $term) {
-        $termID  = $term->term_id;
-        $postsNum = get_posts( array(
-          'post_type' => 'attachment',
-          'posts_per_page' => '99999999',
-          'tax_query' => array( array(
-            'taxonomy' => 'groupicons',
-            'field' => 'term_id',
-            'terms' => $termID
-          ) )
-        ) );
-
-        foreach ($postsNum as $postNum) {
-          $numIcon[] = $postNum->ID;
-        }
-      }
-    ?>
+    
     <div class="col col-sm-6 col-md text-center files">
-      <p class="h5">Total de <span class="fw-bold h4"><?php echo count($numIcon); ?></span> ícones cadastrados.<p>
+      
+      <?php 
+        $totalIcons = get_query_var( 'totalIcons' );
+        echo '<p class="h5">Total de <span class="fw-bold h4">' . $totalIcons . '</span> ícones cadastrados.<p>'; 
+      ?>
+
     </div>
 
     <div class="col-lg-auto col-sm-12 d-flex align-items-center justify-content-md-end actions">

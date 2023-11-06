@@ -15,38 +15,17 @@
     <div class="btn-group btn-group-transparent col-auto" role="group">
 
       <?php 
-        $group_terms = get_terms('groupicons', array('hide_empty' => false));
-        foreach($group_terms as $term) {
-        
-          $termID  = $term->term_id;
-          $term->name;
-          $postsversions = get_posts( array(
-            'post_type' => 'attachment',
-            'posts_per_page' => 99999999,
-            'tax_query' => array( array(
-              'taxonomy' => 'groupicons',
-              'field' => 'term_id',
-              'terms' => $termID
-            ) )
-          ) );
+      /** Versões */
+      $versions = get_query_var( 'versions' );
+      //Verifica se há categorias
+      if (count($versions, COUNT_RECURSIVE) > 1) {
 
-          if($term->name == $post->post_name) {
+        $x = 1;
+        error_reporting(0);
+        //Remove duplicidade das categorias dos ícones
+        foreach (array_unique($versions) as $verName) {
 
-          $versions[] = array();
-          foreach ($postsversions as $postsversion) {
-            $vericons = wp_get_post_terms( $postsversion->ID, 'vericons', array( 'fields' => 'all' ) );
-            foreach($vericons as $term) {
-              $versions[] = $term->name;
-            }
-          }
-
-          if (count($versions, COUNT_RECURSIVE) > 1) {
-          
-            $x = 1;
-            error_reporting(0);
-            foreach (array_unique($versions) as $verName) {
-
-            if($x > 1) {
+          if($x > 1) {
       ?>
 
               <input type="radio" class="btn-check" name="btn-ver" data-url='<?php echo get_site_url();?>' id="<?php echo $verName; ?>-1" autocomplete="off" value="<?php echo $verName; ?>" <?php if($x === 2) { echo 'checked';} ?>>
@@ -58,8 +37,6 @@
               $x++;
             }
           }
-        }
-      }
       ?>
     </div>
   </div>
@@ -67,7 +44,7 @@
   <div class="list-icons row">
     <div class="col text-center">
 
-      <?php
+    <?php
         $group_terms = get_terms('groupicons', array('hide_empty' => false));
         foreach($group_terms as $term) {
         

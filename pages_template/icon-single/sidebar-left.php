@@ -48,43 +48,24 @@
         </label>
 
         <?php 
-          $group_terms_caticons = get_terms('groupicons', array('hide_empty' => false));
-          foreach($group_terms_caticons as $term) {
-          
-            $termID  = $term->term_id;
-            $term->name;
-            $postsCat = get_posts( array(
-              'post_type' => 'attachment',
-              'posts_per_page' => 99999999,
-              'tax_query' => array( array(
-                'taxonomy' => 'groupicons',
-                'field' => 'term_id',
-                'terms' => $termID
-              ) )
-            ) );
-
-            if($term->name == $post->post_name) {
-
-            foreach ($postsCat as $postCat) {
-              $caticons = wp_get_post_terms( $postCat->ID, 'caticons', array( 'fields' => 'all' ) );
-              foreach($caticons as $term) {
-                $category[] = $term->name;
-              }
-            }
-
-            foreach (array_unique($category) as $verName) { 
+          /**  Inclusão do SIDEBAR-LEFT -> Categorias */
+          $category = get_query_var( 'category' );
+          //Verifica se há categorias
+          if (count($category, COUNT_RECURSIVE) > 1) {
+            //Remove duplicidade das categorias dos ícones
+            foreach (array_unique($category) as $category_icons) { 
         ?>
 
-          <input type="radio" class="btn-check" name="btn-category" data-url='<?php echo get_site_url();?>' id="btn-category-<?php echo $verName; ?>" value="<?php echo $verName; ?>" autocomplete="off">
-          <label class="btn btn-outline-primary text-white waves-effect waves-light" for="btn-category-<?php echo $verName; ?>">
+          <input type="radio" class="btn-check" name="btn-category" data-url='<?php echo get_site_url();?>' id="btn-category-<?php echo $category_icons; ?>" value="<?php echo $category_icons; ?>" autocomplete="off">
+          <label class="btn btn-outline-primary text-white waves-effect waves-light" for="btn-category-<?php echo $category_icons; ?>">
             <div class="row gx-0">
               <div class="col text-start">
-                <?php echo $verName; ?>
+                <?php echo $category_icons; ?>
               </div>
             </div>
           </label>
 
-        <?php }
+        <?php
             }
           }
         ?>

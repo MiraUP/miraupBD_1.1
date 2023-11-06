@@ -3,8 +3,6 @@
  
   echo '<section class="icon-page inner-page">';
 
-    get_template_part( 'pages_template/icon-single/header' );
-
-    get_template_part( 'pages_template/icon-single/content' );
+    get_template_part( 'pages_template/icon-single/search-data-icons' ); 
 
   echo '</section>';

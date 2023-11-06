@@ -2,15 +2,12 @@
 
   <div class="row content-icons">
     <?php
-    
-      global $post;
-      $slug = $post->post_name;
-    
+
       get_template_part( 'pages_template/icon-single/sidebar-left' ); 
       
       get_template_part( 'pages_template/icon-single/content-items-icon' ); 
       
-      get_template_part( 'pages_template/icon-single/sidebar-right' ); 
+      get_template_part( 'pages_template/icon-single/sidebar-right' );
       
     ?>
   </div>
