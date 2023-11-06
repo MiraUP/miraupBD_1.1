@@ -1,0 +1,25 @@
+.cp-lightimg {
+  position: relative;
+  @include anima-basic;
+  z-index: 1001;
+  @include shadow-basic(40px, bottom);
+  height: 100% !important;
+  width: auto !important;
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out;
+}
+
+.cp-lightoverlay {
+  position: fixed;
+  background: rgba($black, 0.7);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  @include anima-basic;
+
+  &.cp-lightoverlay-in {
+    opacity: 1;
+  }
+}

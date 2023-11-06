@@ -1,0 +1,21 @@
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: darken($black01, 5%);
+  border-radius: 3px;
+
+  &-track {
+    background: none;
+  }
+
+  &-thumb {
+    background: $blue;
+    border-radius: 3px;
+    @include anima-basic;
+
+    &:hover {
+      background: $cyan;
+      @include anima-basic;
+    }
+  }
+}

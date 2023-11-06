@@ -1,0 +1,89 @@
+/*** 
+  2.1 Color Pallets
+
+
+//Primary colors
+$blue01     : #3D44D5;
+$blue02     : #80BADA;
+$violet     : #542BA8;
+$green      : #6BA384;
+$black01    : #354050;
+$white01    : #DFE0E4;
+
+//Secunds colors
+$black      : #000000;  
+$white      : #FFFFFF;
+$orange     : #F4A003;
+$red        : #ba3a31;
+
+// Theme colors
+$primary    : $blue01;
+$secondary  : $violet;
+$success    : $green;
+$info       : $blue02;
+$warning    : $orange;
+$danger     : $red;
+$light      : $white01;
+$dark       : $black01;*/
+
+
+
+/*** 
+  2.2 Color Configs 
+
+$colors: (
+  //Pure
+  "_blue01"      : $blue01,
+  "_blue02"      : $blue02,
+  "_violet"      : $violet,
+  "_green"       : $green,
+  "_black01"     : $black01,
+  "_white01"     : $white01,
+  "_black"       : $black,
+  "_white"       : $white,
+  "_orange"      : $orange,
+  "_red"         : $red,
+
+  //Themes
+  "_primary"     : $primary,
+  "_secondary"   : $secondary,
+  "_success"     : $success,
+  "_info"        : $info,
+  "_warning"     : $warning,
+  "_danger"      : $danger,
+  "_light"       : $light,
+  "_dark"        : $dark,
+);
+
+
+
+@function color($color) {
+  @if map-has-key($colors, $color) {
+    @return map-get($colors, $color);
+  }
+}*/
+
+
+
+
+/*** 
+  2.3 Variables Property Colors 
+*/
+@each $prop,
+$color in $colors {
+  .fill-#{$prop} {
+    fill: $color;
+  }
+
+  .stroke-#{$prop} {
+    stroke: $color;
+  }
+
+  .background-#{$prop} {
+    background-color: $color;
+  }
+
+  .border-#{$prop} {
+    border-color: $color;
+  }
+}

@@ -1,0 +1,35 @@
+.gallery-bar {
+
+  .col-md-auto {
+
+    @include media-breakpoint-down(md) {
+      order: 1;
+      text-align: center;
+    }
+
+    .icon {
+      font-size: 1.4rem;
+      margin-left: 15px;
+    }
+
+    .dropdown-menu-dark {
+
+      .icon {
+        margin-left: 25px;
+
+        &:first-child {
+          margin-left: 0;
+          margin-right: 15px;
+        }
+      }
+    }
+
+    &.me-auto {
+
+      @include media-breakpoint-down(md) {
+        order: 2 !important;
+        margin-top: 20px;
+      }
+    }
+  }
+}

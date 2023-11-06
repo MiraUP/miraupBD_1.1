@@ -1,0 +1,141 @@
+.page-login {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+
+  @include media-breakpoint-down(lg) {
+    overflow: auto;
+    position: relative;
+  }
+
+  .logo-extend-white {
+    width: 250px;
+    margin: 50px 0;
+
+    @include media-breakpoint-down(md) {
+      width: 200px;
+    }
+  }
+
+  .parallax {
+
+    .graphic-01 {
+      top: -220%;
+      left: 70%;
+    }
+  }
+
+  .icon {
+
+    &-arrow-left {
+      font-size: 2.5rem;
+      color: $white01  !important;
+      padding: 0 30px 0 10px;
+      @include anima-basic;
+
+      &:hover {
+        padding: 0 40px 0 0;
+      }
+    }
+  }
+
+  .form {
+
+    .content-blue {
+      background: $blue;
+      position: relative;
+      max-width: 500px;
+      width: 100%;
+      min-width: 300px;
+      text-align: left !important;
+      left: 50%;
+      @include prefix(transform, translateX(-50%), moz webkit ms o);
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: $green;
+        top: -30px;
+        left: -30px;
+        width: 60px;
+        height: 60px;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        background: $green;
+        bottom: -20px;
+        right: -20px;
+        width: 40px;
+        height: 40px;
+      }
+
+      .title {
+        padding: 35px 0 45px 0;
+        position: relative;
+
+        span {
+          display: block;
+          width: 538px;
+          height: 30px;
+          position: absolute;
+          bottom: -7.5px;
+          left: 50%;
+          margin-left: -269px;
+          background: url("data:image/svg+xml,%3Csvg version='1.1' id='Camada_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 538 30' style='enable-background:new 0 0 538 30;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:none;stroke:%2348DAFA;stroke-width:4;stroke-miterlimit:10;%7D .st1%7Bfill:%2348DAFA;%7D%0A%3C/style%3E%3Cpath class='st0' d='M411.7,15H538'/%3E%3Cpath class='st0' d='M0,15h323.9'/%3E%3Cpath class='st1' d='M281.5,15L269,2.5L256.5,15L269,27.5L281.5,15z'/%3E%3C/svg%3E") center center no-repeat;
+        }
+      }
+    }
+
+    &-control {
+      padding: 1.563rem;
+    }
+
+    &-check {
+      padding: 1rem 1.563rem;
+    }
+
+    #wp-submit {
+      font-size: 1.25rem;
+      padding: 33px;
+      border: none;
+      margin-top: -2px;
+
+      &:hover,
+      &:active {
+        border: none;
+        background: $green;
+      }
+    }
+
+    .link {
+      display: inline-block;
+      margin-top: 10px;
+
+      .icon-question {
+        font-size: 24px;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  .lost-pass {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    min-width: 300px;
+    left: 50%;
+    @include prefix(transform, translateX(-50%), moz webkit ms o);
+  }
+
+  .footer {
+    margin-top: 30px;
+  }
+}

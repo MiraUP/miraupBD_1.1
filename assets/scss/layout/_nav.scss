@@ -1,0 +1,228 @@
+nav.nav-primary {
+  position: relative;
+  z-index: 1;
+  background-color: rgba($black01, 1);
+  background-image: linear-gradient(180deg, rgba($black01, 1) 0%, rgba($black01, 0) 70%);
+  @include anima-basic;
+
+  @include nav-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    @include shadow-basic(80px, bottom);
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    max-width: 925px;
+    height: 352px;
+    background: url('../img/graphic/gradient.png') top center no-repeat;
+    background-size: 100% 100%;
+    @include prefix(transform, translateX(-30%), moz webkit ms o);
+    @include anima-basic;
+
+    @include nav-fixed {
+      height: 87px;
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -500px;
+    width: 200%;
+    height: 30px;
+    background: $black01;
+    opacity: 0;
+    @include anima-basic;
+    @include shadow-basic(20px, bottom);
+  }
+
+  .header {
+    position: relative;
+    z-index: 10;
+    padding: 18px 0;
+    @include anima-basic;
+
+    .logo {
+      display: flex;
+
+      a {
+        display: inline-block;
+        position: relative;
+        margin-right: 82px;
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 10px;
+          right: -42px;
+          width: 2px;
+          height: 30px;
+          background: $white01;
+          opacity: .15;
+          z-index: 1;
+        }
+
+        @include media-breakpoint-down(md) {
+          margin-right: 60px;
+
+          &::before {
+            right: -30px;
+          }
+        }
+
+        &.btn-backHome {
+          margin-right: 25px;
+
+          &::before {
+            display: none;
+          }
+        }
+
+        @include media-breakpoint-down(sm) {
+          margin-right: 30px;
+
+          &::before {
+            display: none;
+          }
+        }
+      }
+
+      &-extend-white {
+        height: 50px;
+        width: 128px;
+        opacity: 1;
+        @include anima-basic;
+
+        @include nav-fixed {
+          width: 40px;
+          opacity: 0;
+        }
+      }
+
+      &-ass-white {
+        height: 40px;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        @include anima-basic;
+
+        @include nav-fixed {
+          opacity: 1;
+        }
+      }
+    }
+
+    .col-auto {
+      display: flex;
+    }
+
+    .side-nav {
+
+      .col {
+        display: flex;
+        align-items: center;
+      }
+
+      .button-notification {
+        display: flex;
+      }
+
+      .icon-bell {
+        display: block;
+        color: $white01;
+        font-size: 2rem;
+        margin: 0 10px;
+        height: 48px;
+        width: 48px;
+        padding: 8px;
+
+        &:hover {
+          @include anima-bell;
+        }
+      }
+
+      .avatar {
+        border: 3px solid $white01;
+        width: 51px;
+        height: 51px;
+        position: relative;
+        @include anima-basic;
+
+        &::before,
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 5px;
+          left: 5px;
+          width: 35px;
+          height: 35px;
+          @include anima-basic;
+        }
+
+        &::before {
+          background: url('../img/smilles/smille01.svg') no-repeat;
+          opacity: 1;
+        }
+
+        &::after {
+          background: url('../img/smilles/smille03.svg') no-repeat;
+          opacity: 0;
+        }
+
+        &:hover {
+          border-radius: 100px;
+
+          &::before {
+            opacity: 0;
+          }
+
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.home {
+
+  .btn-backHome {
+    display: none !important;
+  }
+}
+
+.bar-top-iten-actions {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  background: rgba($black01, .95);
+  padding: 15px 0;
+  z-index: 19;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  @include anima-basic;
+  @include shadow-basic(80px, bottom);
+
+  &.fixed {
+    opacity: 1;
+    top: 87px;
+    max-height: 1000px;
+  }
+
+  .btn-primary {
+    margin-right: 5px;
+  }
+}

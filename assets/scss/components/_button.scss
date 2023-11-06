@@ -1,0 +1,287 @@
+//Menu Burger
+.menu-burger {
+  position: relative;
+  padding: 10px 15px;
+
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+    background: $white01;
+    height: 3px;
+    width: 20px;
+    border-radius: 50px;
+    margin: 5px 0;
+    @include anima-basic;
+  }
+
+  &.active,
+  &:hover {
+
+    &::before {
+      @include prefix(transform, translateX(0px), moz webkit ms o);
+      width: 25px;
+    }
+
+    &::after {
+      @include prefix(transform, translateX(10px), moz webkit ms o);
+      width: 25px;
+    }
+  }
+}
+
+.button {
+
+  &-heart {
+    position: relative;
+
+    input[type=checkbox] {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      position: absolute;
+
+      &:checked+label {
+        color: $red;
+
+        &::before {
+          content: '\e9a6';
+        }
+      }
+    }
+
+    label {
+      display: block;
+      @include fontIcon;
+      speak: never;
+      color: $white01;
+      font-size: 2rem;
+      cursor: pointer;
+
+      &::before {
+        content: '\e9a5';
+      }
+
+      &:hover {
+        @include anima-heart;
+      }
+    }
+  }
+
+  &-close {
+    @include anima-basic;
+    opacity: .8;
+
+    &:hover {
+      opacity: 1;
+      @include anima-rotate-zoom;
+    }
+  }
+
+  &-notification {
+
+    &.notification-new {
+      position: relative;
+
+      &::before,
+      &::after {
+        position: absolute;
+        display: block;
+        content: '';
+        top: 0;
+        right: 0;
+        height: 20px;
+        width: 20px;
+        background: $green;
+        border: 4px solid $black01;
+        border-radius: 50px;
+        z-index: 10;
+      }
+
+      &::after {
+        border: none;
+        @include anima-badge;
+      }
+    }
+  }
+}
+
+.btn {
+  @include fontTitle;
+
+  &-group {
+
+    &-transparent {
+
+      label {
+        border: none;
+      }
+    }
+  }
+}
+
+.btn-transparent,
+.btn-transparent-group {
+  --bs-btn-font-weight: 400;
+  --bs-btn-color: var(--white01);
+  --bs-btn-bg: none;
+  --bs-btn-border-color: none;
+  --bs-btn-border-radius: 0;
+  --bs-btn-hover-color: var(--white);
+  --bs-btn-hover-bg: none;
+  --bs-btn-hover-border-color: none;
+  --bs-btn-focus-shadow-rgb: none;
+  --bs-btn-active-color: var(--white);
+  --bs-btn-active-bg: none;
+  --bs-btn-active-border-color: none;
+}
+
+.btn-group {
+
+  .btn-transparent-group {
+    position: relative;
+    color: rgba($white01, .15);
+    border: none;
+    align-self: center;
+    @include anima-basic;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 0.135rem;
+      height: 40px;
+      border-radius: 5px;
+      top: calc(50% - 20px);
+      right: 0;
+      background: rgba($white01, .15);
+    }
+
+    &:last-child {
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &>.btn-check:checked {
+
+    &+.btn-transparent-group {
+      border: none;
+      color: $white01;
+    }
+  }
+}
+
+.dropdown {
+
+  &-toggle {
+
+    &::after {
+      @include fontIcon;
+      content: '\e906';
+      color: $white01;
+      font-size: 1.5rem;
+      border: none;
+      vertical-align: middle;
+    }
+
+    &.no-arrow::after {
+      display: none;
+    }
+  }
+
+  &-menu-dark {
+    border: none;
+    background: lighten($black01, 5%);
+
+    .title {
+      padding: 10px 15px;
+      text-align: center;
+    }
+
+    a {
+      padding: 15px 15px;
+      cursor: pointer;
+      @include anima-basic;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      width: 20px;
+      height: 20px;
+      top: -10px;
+      left: calc(100% - 45px);
+      background: lighten($black01, 5%);
+      @include prefix(transform, rotate(45deg), moz webkit ms o);
+    }
+
+    &[data-popper-placement="top-end"] {
+
+      &::before {
+        bottom: -10px;
+        top: auto;
+      }
+    }
+  }
+}
+
+.btn-post {
+
+  &-next,
+  &-prev {
+    display: flex;
+    position: absolute;
+    z-index: 10;
+    top: 700px;
+    margin: 20px 0;
+    border: 2px solid rgba($white01, .3);
+    padding: 5px;
+    background: rgba($white01, 0);
+    overflow: hidden;
+    width: 44px;
+    max-width: 344px;
+
+    .icon {
+      color: rgba($white01, .3);
+      font-size: 2rem;
+    }
+
+    span {
+      display: inline-block;
+      padding: 5px 10px 5px 5px;
+      font-weight: 600;
+      color: $white01;
+    }
+
+    &:hover {
+      border-color: rgba($blue, 1);
+      background: rgba($blue, 1);
+      width: max-content;
+
+      i {
+        color: rgba($white01, 1);
+      }
+    }
+
+    &.fixed {
+      position: fixed;
+      top: 50%;
+    }
+  }
+
+  &-prev {
+    left: 0;
+    border-left: none;
+  }
+
+  &-next {
+    right: 0;
+    border-right: none;
+    justify-content: flex-end;
+  }
+}

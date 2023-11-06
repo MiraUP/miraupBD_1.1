@@ -1,0 +1,140 @@
+.switch {
+  display: block;
+  position: relative;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .mark {
+    display: inline-block;
+    position: relative;
+    height: 15px;
+    width: 40px;
+    border-radius: 100px;
+    vertical-align: middle;
+    background-color: $white01;
+    @include anima-basic;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      top: calc(50% - 11px);
+      width: 22px;
+      height: 22px;
+      border-radius: 100px;
+      background: $white01;
+      @include shadow-basic(10px, right);
+      @include anima-basic;
+    }
+  }
+
+  &:hover input~.mark {
+    background-color: darken($white01, 5%);
+  }
+
+  input:checked~.mark {
+    background-color: $green;
+
+    &:after {
+      display: block;
+      left: calc(100% - 22px);
+      background: $green;
+      @include shadow-basic(10px, left);
+      @include anima-basic;
+    }
+  }
+}
+
+.form {
+
+  &-list {
+    --bs-list-group-bg: none;
+
+    li {
+      color: $white01;
+      border: none !important;
+      padding: 8px 0;
+    }
+  }
+
+  &-check {
+    --markChecked: '\e941';
+    --mark: '\e941';
+    --markColorChecked: var(--white01);
+    --markColor: var(--white01);
+    --markBGChecked: var(--blue);
+    --markBG: var(--white01);
+    --markWidth: 20px;
+    --markHeight: 20px;
+    --markOpacityChecked: 1;
+    --markOpacity: 0;
+    --markFontSize: 1.8rem;
+
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+    flex-direction: row;
+    padding: 0;
+    cursor: pointer;
+
+    .mark {
+      position: relative;
+      display: inline-block;
+      margin-right: 15px;
+      width: var(--markWidth);
+      height: var(--markHeight);
+      border-radius: 4px;
+      background: var(--markBG);
+      @include anima-basic;
+
+      &::before {
+        content: var(--mark);
+        @include fontIcon;
+        display: block;
+        color: var(--markColor);
+        font-size: var(--markFontSize);
+        position: absolute;
+        top: -13px;
+        opacity: var(--markOpacity);
+        @include anima-basic;
+      }
+    }
+
+    input {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      position: absolute;
+
+      &:checked {
+
+        &~.mark {
+          background: var(--markBGChecked);
+
+          &::before {
+            content: var(--markChecked);
+            color: var(--markColorChecked);
+            opacity: var(--markOpacityChecked);
+          }
+        }
+      }
+    }
+  }
+
+  &-control, &-control:focus {
+    background: none;
+    border:none;
+    color:$white01;
+  }
+}

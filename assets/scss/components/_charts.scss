@@ -1,0 +1,75 @@
+@property --p {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+.pie {
+  --p: 20;
+  --b: 10px;
+  --c: var(--cyan);
+  --w: 150px;
+
+  width: var(--w);
+  aspect-ratio: 1;
+  position: relative;
+  display: inline-grid;
+  place-content: center;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  &:before {
+    inset: 0;
+    background:
+      radial-gradient(farthest-side, var(--c) 98%, #0000) top/var(--b) var(--b) no-repeat,
+      conic-gradient(var(--c) calc(var(--p)*1%), #0000 0);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+    mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+    @include anima-basic;
+  }
+
+  &:after {
+    inset: calc(50% - var(--b)/2);
+    background: var(--c);
+    transform: rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    display: inline-grid;
+    place-content: center;
+    font-size: 25px;
+    font-weight: 600;
+    top: calc(var(--b) / 2 - 2px);
+    right: calc(var(--b) / 2 - 2px);
+    bottom: calc(var(--b) / 2 - 2px);
+    left: calc(var(--b) / 2 - 2px);
+    z-index: -1;
+    border-radius: 1000px;
+    border: 4px solid rgba($black, .15);
+  }
+}
+
+.animate {
+  animation: p 1s .5s both;
+}
+
+.no-round:before {
+  background-size: 0 0, auto;
+}
+
+.no-round:after {
+  content: none;
+}
+
+@keyframes p {
+  from {
+    --p: 0
+  }
+}

@@ -1,0 +1,212 @@
+.offcanvas {
+  background: $black01  !important;
+  padding: 30px;
+  border: none !important;
+  @include shadow-basic(64px, left);
+
+  &-header {
+
+    .button-close {
+      color: $white01;
+      font-size: 1.7rem;
+    }
+  }
+
+  &-title {
+    color: $white01  !important;
+
+    &-icons {
+      margin: 30px 0 15px 0;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      grid-template-rows: 1fr;
+      gap: 0;
+      grid-template-areas: "icon title mark";
+      align-items: center;
+    }
+  }
+
+  &-backdrop {
+    background: $black01  !important;
+    opacity: .25;
+  }
+
+  &-body {
+
+    .profile {
+      margin-top: 20px;
+
+      h3 {
+        margin-top: 10px;
+        color: $white01;
+      }
+    }
+
+    .dates {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      align-content: flex-start;
+      flex-direction: row;
+      color: $white01;
+      text-align: center;
+      font-size: .8rem;
+      margin-top: 50px;
+
+      .value {
+        color: $cyan;
+        display: block;
+      }
+    }
+  }
+
+  .h4,
+  .h5 {
+
+    .icon {
+      font-size: 1.8rem;
+      display: inline-block;
+      margin-right: 15px;
+    }
+  }
+
+  &-footer {
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .chart {
+    margin-top: 50px;
+    color: $white01;
+    text-align: center;
+  }
+
+  .list-registration {
+    margin-top: 30px;
+    color: $white01;
+    --bs-list-group-color: $white01;
+    --bs-list-group-bg: none;
+
+    .list-group-item {
+      padding: 20px 0;
+      border-top: 2px solid rgba($white01, .15);
+      border-bottom: none;
+
+      &:first-child {
+        border: none;
+      }
+
+      .icon {
+        font-size: 2.5rem;
+        margin-right: 10px;
+      }
+
+      &.animated-icon {
+
+        lord-icon {
+          overflow: visible !important;
+          padding-right: calc(100% - 60px);
+
+          .itens {
+            position: absolute;
+            width: calc(100% - 65px);
+            left: 65px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+
+  .input-text {
+    background: rgba($black, .1);
+
+    .form-control {
+      background: none !important;
+      border: none;
+      color: $white01;
+
+      &:focus {
+        border: none;
+      }
+
+      &:not(:placeholder-shown)~label,
+      &:focus~label,
+      &-plaintext~label,
+      .form-select~label {
+        opacity: .3;
+        transform: scale(0.7) translateY(-0.5rem) translateX(0.65rem);
+      }
+    }
+
+    label {
+      @include fontTitle;
+      //font-size: 1.5rem;
+      font-weight: 800;
+    }
+  }
+
+  .search-form {
+
+    .button-search {
+      padding: 6px;
+
+      .lord-icon {
+        width: 45px !important;
+        height: 45px !important;
+      }
+    }
+  }
+
+  .search-favorite {
+
+    .switch {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: 1fr;
+      gap: 0px 0px;
+      grid-template-areas:
+        "title mark";
+      align-items: center;
+
+      .h5 {
+
+        .icon {
+          font-size: 1.8rem;
+          display: inline-block;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .category-options {
+    margin-top: 30px;
+    border-top: solid 2px rgba($white01, .15);
+
+    &:first-child {
+      border: none;
+    }
+
+    .form-check {
+      width: 100%;
+    }
+  }
+
+  .category-file {
+
+    &-itens {
+      margin-top: 45px;
+      gap: 25px 0;
+
+      label {
+        flex: 1 0 16.6%;
+      }
+    }
+  }
+}

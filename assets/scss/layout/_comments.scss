@@ -1,0 +1,139 @@
+.comments {
+
+  a {
+    color: $cyan  !important;
+    position: relative;
+
+    ::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: -7px;
+      border-radius: 5px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: $cyan  !important;
+      @include anima-basic;
+    }
+
+    &:hover {
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &.comment-reply-link {
+      display: none;
+    }
+  }
+
+  ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 70%;
+        height: 2px;
+        background: rgba($white01, .1);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+        border-bottom: none;
+
+        &::after {
+          display: none;
+        }
+      }
+
+      &:first-child {
+
+        .comment-body {
+          padding-top: 0;
+        }
+      }
+
+      li {
+        border-bottom: none;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: auto;
+          width: 70%;
+          height: 2px;
+          background: rgba($white01, .1);
+        }
+
+        &:first-child {
+
+          &::after {
+            display: block;
+          }
+
+          .comment-body {
+            padding-top: 30px;
+          }
+        }
+      }
+
+      p {
+        padding: 10px 0 0 0;
+        margin: 0;
+      }
+
+      .comment-body {
+        padding: 30px 0;
+      }
+    }
+  }
+
+  .comment-meta,
+  .required-field-message,
+  .says {
+    display: none;
+  }
+
+  textarea {
+    max-width: 340px;
+    width: 100%;
+    min-height: 120px;
+    background-color: rgba($black, .1);
+    border: none;
+    color: $white01;
+    @include anima-basic;
+
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: rgba($black, .2);
+    }
+  }
+
+  .btn-submit-comment {
+    padding: 0;
+    margin-top: 5px;
+    border-radius: 0;
+
+    input {
+      background: none;
+      border: none;
+      color: $white01;
+      width: 100%;
+      padding: 15px 25px;
+    }
+  }
+}

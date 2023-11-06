@@ -1,0 +1,75 @@
+.parallax {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  .graphic {
+    position: absolute;
+    background-size: 100%;
+
+    &-01 {
+      background-image: url('../img/graphic/graphic-01.png');
+      width: 141px;
+      height: 155px;
+      top: 10%;
+      left: 5%;
+
+      @include media-breakpoint-down(lg) {
+        left: -15%;
+      }
+
+      @include media-breakpoint-down(md) {
+        left: -25%;
+      }
+    }
+
+    &-02 {
+      background-image: url('../img/graphic/graphic-02.png');
+      width: 235px;
+      height: 264px;
+      bottom: -5%;
+      left: -16%;
+
+      @include media-breakpoint-down(xl) {
+        bottom: -15%;
+        left: -20%;
+      }
+
+      @include media-breakpoint-down(lg) {
+        bottom: -5%;
+        left: -35%;
+      }
+
+      @include media-breakpoint-down(sm) {
+        left: 85%;
+      }
+    }
+
+    &-03 {
+      background-image: url('../img/graphic/graphic-03.png');
+      width: 500px;
+      height: 492px;
+      right: -30%;
+      top: 0;
+
+      @include media-breakpoint-down(xl) {
+        right: -45%;
+      }
+
+      @include media-breakpoint-down(lg) {
+        right: -65%;
+      }
+
+      @include media-breakpoint-down(md) {
+        right: -80%;
+      }
+
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+  }
+}

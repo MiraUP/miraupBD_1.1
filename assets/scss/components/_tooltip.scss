@@ -1,0 +1,15 @@
+.custom-tooltip {
+  border-radius: 0;
+
+  &.tooltip {
+    --bs-tooltip-bg: var(--black01);
+
+    .tooltip-inner {
+      font-size: 0.75rem;
+    }
+  }
+
+  .tooltip-arrow {
+    display: none;
+  }
+}

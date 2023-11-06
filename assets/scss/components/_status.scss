@@ -1,0 +1,21 @@
+$status : ("online":$green, "offline":$gray-700, "out":$orange, "occupied":$red);
+
+.status {
+  display: block;
+  position: absolute;
+  top: 11.5px;
+  right: 11.5px;
+  height: 15px;
+  width: 15px;
+  box-shadow: 0 0 0 5px $black01;
+  border-radius: 100px;
+  z-index: 10;
+
+  @each $sta,
+  $color in $status {
+
+    &.status-#{$sta} {
+      background: $color;
+    }
+  }
+}

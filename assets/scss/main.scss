@@ -1,0 +1,49 @@
+/**** Abstracts ****/
+@import 'abstracts/_animations';
+@import 'abstracts/_mixins';
+
+/**** Vendors ****/
+//Bootstrap 5.2
+@import 'vendors/bootstrap/_bootstrap-grid';
+@import 'vendors/bootstrap/_bootstrap-reboot';
+@import 'vendors/bootstrap/_bootstrap-utilities';
+@import 'vendors/bootstrap/_bootstrap';
+
+/**** Base ****/
+@import 'base/_typography';
+@import 'base/_colors';
+@import 'base/_base';
+@import 'base/_reset';
+
+/**** Components ****/
+@import 'components/_icon.scss';
+@import 'components/_button.scss';
+@import 'components/_avatar.scss';
+@import 'components/_hr.scss';
+@import 'components/_shadows.scss';
+@import 'components/_wave.scss';
+@import 'components/_scrollbar.scss';
+@import 'components/_offcanvas.scss';
+@import 'components/_status.scss';
+@import 'components/_charts.scss';
+@import 'components/_form.scss';
+@import 'components/_gallery.scss';
+@import 'components/_tooltip.scss';
+@import 'components/_zoomimg.scss';
+@import 'components/_toast.scss';
+@import 'components/_pagination.scss';
+@import 'components/_parallax.scss';
+
+/**** Layout ****/
+@import 'layout/_nav.scss';
+@import 'layout/_main-menu.scss';
+@import 'layout/_banner.scss';
+@import 'layout/_search.scss';
+@import 'layout/_galleryBar.scss';
+@import 'layout/_comments.scss';
+@import 'layout/_footer.scss';
+
+/**** Pages ****/
+@import 'pages/_single.scss';
+@import 'pages/_icons-page.scss';
+@import 'pages/_login.scss';

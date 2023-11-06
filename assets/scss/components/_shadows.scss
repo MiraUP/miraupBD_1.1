@@ -1,0 +1,23 @@
+@mixin shadow-basic($blur, $direction) {
+
+  $y: $blur * .625;
+  $x: $blur * .625;
+  $spread: -$blur * .1563;
+
+
+  @if $direction ==up {
+    @include prefix(box-shadow, 0 -$y $blur $spread rgba($black, .3), moz webkit ms o);
+  }
+
+  @else if $direction ==right {
+    @include prefix(box-shadow, $x 0 $blur $spread rgba($black, .3), moz webkit ms o);
+  }
+
+  @else if $direction ==bottom {
+    @include prefix(box-shadow, 0 $y $blur $spread rgba($black, .3), moz webkit ms o);
+  }
+
+  @else if $direction ==left {
+    @include prefix(box-shadow, -$x 0 $blur $spread rgba($black, .3), moz webkit ms o);
+  }
+}

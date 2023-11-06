@@ -1,0 +1,149 @@
+#main-menu {
+
+  .modal-content {
+    background: $black01;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      z-index: 0;
+      height: 450px;
+      width: 100%;
+      min-width: 1440px;
+      background: url('../img/graphic/gradient.png') no-repeat center top;
+      background-size: 100% 100%;
+      bottom: 0;
+      @include prefix(transform, rotate(180deg), moz webkit ms o);
+
+      @include media-breakpoint-down(xxl) {
+        left: calc(50% - 720px);
+      }
+    }
+
+    h2,
+    h3,
+    button,
+    li,
+    p,
+    a {
+      color: $white01;
+    }
+
+    .modal-title {
+      margin: 30px 0;
+      font-size: 2.7rem;
+    }
+
+    .col-btn-close {
+      display: flex;
+
+      .icon-close {
+        font-size: 2rem;
+      }
+    }
+
+    .navegation {
+      margin-bottom: 60px;
+
+      h3 {
+        margin: 60px 0 20px 0;
+      }
+
+      .col-lg-4 {
+
+        &:first-child {
+
+          ul::before {
+            display: none;
+          }
+        }
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          display: block;
+          width: 2px;
+          height: 400px;
+          background: $white01;
+          opacity: .15;
+          @include prefix(transform, translateY(calc(50% - 200px)), moz webkit ms o);
+        }
+
+        @include media-breakpoint-down(lg) {
+          padding: 0 0 50px 0;
+
+          &::before {
+            right: inherit;
+            transform: none;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+          }
+        }
+
+        li {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+
+          a {
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            padding: 10px 0;
+            opacity: .6;
+            @include anima-basic;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      #accordionMenuMobile {
+        margin-top: 40px;
+
+        .accordion-item {
+          background: none;
+          border: none;
+
+          .accordion-header {
+            margin: 0;
+
+            button {
+              background: none;
+              box-shadow: 0 2px 0 0 rgba($white01, .15);
+              border-radius: 0;
+              padding: 30px 20px;
+              font-size: 1.3rem;
+
+              &::after {
+                font-family: 'icomoon';
+                content: '\e906';
+                background: none;
+                font-size: 2rem;
+                height: auto;
+                width: auto;
+              }
+            }
+          }
+
+          .accordion-body {
+            padding: 50px 0 0 0;
+          }
+        }
+      }
+    }
+  }
+}

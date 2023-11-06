@@ -1,0 +1,17 @@
+html {
+  background-color: $black01;
+
+  body {
+    background: none !important;
+    overflow-x: hidden;
+
+    &.nav-fixed {
+      padding-top: 87px;
+    }
+  }
+}
+
+::selection {
+  color: $white01;
+  background-color: rgba($blue, .8);
+}

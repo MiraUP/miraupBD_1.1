@@ -1,0 +1,22 @@
+.toast-container {
+
+  .toast-header {
+    background: $black01;
+    border: none;
+
+    .icon {
+      color: $white01;
+    }
+  }
+
+  .toast-body {
+    background: $black01;
+    text-align: center;
+    @include shadow-basic(20, bottom);
+    padding-bottom: 20px;
+
+    strong {
+      color: $cyan;
+    }
+  }
+}

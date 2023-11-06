@@ -1,0 +1,85 @@
+.banner {
+
+  &-infinity {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    height: 550px;
+    background: $black01;
+
+    @include media-breakpoint-down(xl) {
+      height: 450px;
+    }
+
+    @include media-breakpoint-down(md) {
+      height: 350px;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(135deg, rgba($blue, 0) 40%, $blue 100%);
+    }
+
+    .announcement {
+      position: absolute;
+      color: $white01;
+      z-index: 1;
+      width: 100%;
+      font-size: 4rem;
+      top: 50%;
+      @include prefix(transform, translateY(-70%), moz webkit ms o);
+
+      span {
+        display: block;
+        font-size: 1.1rem;
+        margin-top: 20px;
+        letter-spacing: .1rem;
+      }
+
+      @include media-breakpoint-down(md) {
+
+        span {
+          display: none;
+        }
+      }
+
+      @include media-breakpoint-down(sm) {
+        font-size: 2.5rem;
+      }
+    }
+
+    .marquee {
+      overflow: hidden;
+      position: relative;
+      height: 1500px;
+      width: 1500px;
+      @include prefix(transform, rotate(-30deg) translateX(180px) translateY(-650px), moz webkit ms o);
+
+      &-item {
+        position: absolute;
+        height: 500px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        >.item {
+          flex: calc(50% - 10px);
+          margin: 10px 0;
+          background: $white01;
+          overflow: hidden;
+          background: no-repeat center center;
+          background-size: cover;
+          border-radius: 10px;
+          opacity: .3;
+        }
+      }
+    }
+  }
+}
