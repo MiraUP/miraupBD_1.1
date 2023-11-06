@@ -1,2 +1,2 @@
-# miraupBD_1.1
+# MiraUP - Biblioteca para Ativos de Design
 Sistema para ativos de design
