@@ -22406,6 +22406,7 @@ a.waves-effect .waves-ripple {
 .offcanvas .list-registration {
   margin-top: 30px;
   color: #F0F1F5;
+  position: relative;
   --bs-list-group-color: $white01;
   --bs-list-group-bg: none;
 }
@@ -22431,6 +22432,16 @@ a.waves-effect .waves-ripple {
   left: 65px;
   top: 50%;
   transform: translateY(-50%);
+}
+.offcanvas .list-registration .list-group-item.notread::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+  background: #48DAFA;
 }
 .offcanvas .input-text {
   background: rgba(0, 0, 0, 0.1);

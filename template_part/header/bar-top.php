@@ -43,7 +43,7 @@
       </div>
 
       <div class="col d-sm-block d-none">
-        <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar" class="button-notification position-relative notification-new">
+        <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasNews" aria-controls="offcanvasNews" class="button-notification position-relative notification-new">
           <!-- <i class="icon-bell"></i> -->
           <lord-icon
             src="https://cdn.lordicon.com/gelfkkek.json"
