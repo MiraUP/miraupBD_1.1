@@ -7,7 +7,7 @@
           <div class="parallax-inner graphic graphic-02"></div>
           <div class="parallax-inner graphic graphic-03"></div>
         </div>
-        <a href="/" class="icon icon-arrow-left"></a>
+        <a href="<?php echo site_url(); ?>" class="icon icon-arrow-left"></a>
         <img 
           src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-010202.svg"
           alt="<?php bloginfo( 'name' ); ?>"
@@ -15,7 +15,7 @@
       </div>
 
       <div class="col-lg-6 col-12 form text-left justify-content-center">
-        <form action="/wp-login.php" name="loginform" id="loginform" method="post">
+        <form action="<?php echo site_url(); ?>/wp-login.php" name="loginform" id="loginform" method="post">
           <div class="content-blue">
             <h1 class="text-center h2 title">
               Login

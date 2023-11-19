@@ -24639,3 +24639,34 @@ nav.nav-primary .header .side-nav .avatar:hover::after {
 .page-login .footer {
   margin-top: 30px;
 }
+
+.error404 .back a {
+  color: #F0F1F5;
+  font-size: 2.75rem;
+}
+.error404 .brand {
+  padding: 30px 0;
+}
+.error404 .brand svg {
+  max-width: 180px;
+}
+.error404 .img {
+  margin: 0 0 50px 0;
+}
+.error404 .parallax {
+  height: 1px;
+  z-index: 10;
+}
+.error404 .parallax .graphic-01 {
+  top: 12000%;
+  left: 15%;
+}
+.error404 .parallax .graphic-02 {
+  top: 40000%;
+  left: -7%;
+  bottom: auto;
+}
+.error404 .parallax .graphic-03 {
+  right: -25%;
+  top: 10000%;
+}
